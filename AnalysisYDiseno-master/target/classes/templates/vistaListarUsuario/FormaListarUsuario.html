@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Tutorial Spring boot</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="estilo.css" />
+    
+</head>
+<body>
+  	<h1>Lista de usuarios</h1>
+	    <table BORDER>
+			<tr>
+				<td>ID</td>
+				<td>Nombre</td>
+				<td>Apellido</td>
+			</tr>
+			<tr th:if="${usuarios.empty}">
+				<td colspan="3">No hay usuarios registrados en el sistema</td>
+			</tr>
+			<tr th:each="usuario : ${usuarios}">
+				<td><span th:text="${usuario.idUsuario}">ID</span></td>
+				<td><span th:text="${usuario.nombre}">Nombre</span></td>
+				<td><span th:text="${usuario.apellido}">Apellido</span></td>
+			</tr>
+	    </table>
+    
+</body>
+</html>
